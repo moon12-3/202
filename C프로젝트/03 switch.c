@@ -6,13 +6,17 @@ int main(void)
 	// break X, 12d Ãâ·Â
 	switch (x) {
 	case 0 :
-		printf("0");
+		printf("0"); 
+		break;
 	case 1 : 
-		printf("1");
+		printf("1"); 
+		break;
 	case 2 : 
-		printf("2");
+		printf("2"); 
+		break;
 	default : 
-		printf("d");
+		printf("d"); 
+		break;
 	
 	}
 

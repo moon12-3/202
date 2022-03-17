@@ -8,7 +8,7 @@ int main()
 {
 	// printf¸¦ cout °´Ã¼·Î
 	// endl °´Ã¼·Î °³Çà
-	std::cout<< "hello world!" << std::endl;
+	cout<< "hello world!" << endl;
 
 		return 0;
 }

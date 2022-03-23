@@ -12,7 +12,7 @@ int main(void)
 	ptr1 = ptr2;
 	ptr2 = ptr3;
 	
-	*ptr3 *= 2	// num3 *=2 => 90
+	*ptr3 *= 2;	// num3 *=2 => 90
 	*ptr1 += *ptr3;	// num2 +=vvnum3 -> num2 = 120
 	*ptr2 *= 2;	// num3 *= 2 ->. num3 = 180
 	

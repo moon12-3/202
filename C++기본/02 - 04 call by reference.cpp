@@ -2,7 +2,7 @@
 
 using namespace std;
 
-void plus2(int& num) {
+void plus2(int& num) {	//시험에 낼거임 p.75
 	num += 2;
 }
 

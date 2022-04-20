@@ -12,6 +12,7 @@ private :
 	// 디폴트 생성자를 컴파일러가 만들어준다.
 public :
 	Student();
+	Student(int, string);
 
 	void show(void);
 	
@@ -19,7 +20,7 @@ public :
 
 int main() {
 	Student stu1;
-	Student stu2;
+	Student stu2(1111, "moon");
 
 	stu1.show();
 	stu2.show();
@@ -31,6 +32,13 @@ Student::Student() {
 	iStuNum = 1234;
 	strName = "이사랑";
 	cout << "학번이 등록되었습니다." << endl;
+}
+
+Student::Student(int StuNum, string Name) {
+	iStuNum = StuNum;
+	strName = Name;
+	cout << "학번이 등록되었습니다." << endl;
+
 }
 
 void Student::show(void) {

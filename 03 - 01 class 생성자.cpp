@@ -34,9 +34,12 @@ Student::Student() {
 	cout << "학번이 등록되었습니다." << endl;
 }
 
-Student::Student(int iStuNum, string strName) {
-	this->iStuNum = iStuNum;
-	this->strName = strName;
+Student::Student(int StuNum, string sname)
+// 객체 생성 동시에 멤버 변수 초기화	// 멤버변수(매개변수)
+// const와 참조형 멤버변수를 사용할 수 있다.
+	: iStuNum(StuNum), strName(sname) 
+{
+	
 	cout << "학번이 등록되었습니다." << endl;
 
 }

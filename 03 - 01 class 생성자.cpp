@@ -34,9 +34,9 @@ Student::Student() {
 	cout << "학번이 등록되었습니다." << endl;
 }
 
-Student::Student(int StuNum, string Name) {
-	iStuNum = StuNum;
-	strName = Name;
+Student::Student(int iStuNum, string strName) {
+	this->iStuNum = iStuNum;
+	this->strName = strName;
 	cout << "학번이 등록되었습니다." << endl;
 
 }

@@ -19,13 +19,14 @@ public :
 };
 
 int main() {
-	Student stu1;
-	stu1.show();
+	Student* str1 = new Student();
+	str1->show();
 
-	Student stu2(1111, "moon");
+	Student* str1 = new Student(1111, "moon");
+	stu2->show();
 
-	stu1.show();
-	stu2.show();
+	delete Student stu1;
+	delete Student stu2;
 
 	return 0;
 }

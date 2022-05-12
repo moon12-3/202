@@ -19,14 +19,9 @@ public :
 };
 
 int main() {
-	Student* str1 = new Student();
-	str1->show();
-
-	Student* str1 = new Student(1111, "moon");
-	stu2->show();
-
-	delete Student stu1;
-	delete Student stu2;
+	Student* stu = new Student[6];
+	for (int i = 0; i < 6; i++)
+		stu[i].show();
 
 	return 0;
 }

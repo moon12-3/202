@@ -20,6 +20,8 @@ public :
 
 int main() {
 	Student stu1;
+	stu1.show();
+
 	Student stu2(1111, "moon");
 
 	stu1.show();

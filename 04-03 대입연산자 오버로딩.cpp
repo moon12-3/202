@@ -18,6 +18,12 @@ public:
 	// 연산자 오버로딩
 	Student& operator=(const Student& rhs)	// 바로 초기화가 불가능(생성 후 사용하기 때문에)
 	{
+		// 별도로 동적할당된 데이터가 있을 수 있기에 delete가 필요
+		if (sName != nullptr) {
+			delete[] sName;
+			sName = nullptr;
+		}
+
 		cout << "대입연산자 호출" << endl;
 		nHakbun = rhs.nHakbun;
 		int len = strlen(rhs.sName) + 1;

@@ -14,16 +14,37 @@ public:
 	Student(int Hakbun, const char* Name);	//const 없으면 오류남
 	// 소멸자 : 객체가 메모리에서 해제될 때, 호출되는 함수
 	~Student();
+
+	// 연산자 오버로딩
+	Student& operator=(const Student& rhs)	// 바로 초기화가 불가능(생성 후 사용하기 때문에)
+	{
+		cout << "대입연산자 호출" << endl;
+		nHakbun = rhs.nHakbun;
+		int len = strlen(rhs.sName) + 1;
+		sName = new char[len];
+		strcpy(sName, rhs.sName);
+		return *this;
+	}
+
 	Student(const Student&);
 
 	void show(void);
 };
 
 int main(void) {
-	Student stu1 = Student(1111, "JWP");	// 일반 생성자 호출
-	Student* stu2 = new Student(stu1);	// 복사 생성자 호출
+	// 일반생성자(객체가 생성될 때 호출되는 함수) 호출
+	Student stu1 = Student(1111, "JWP");
+	Student stu3 = Student(2222, "JYP");
 	stu1.show();
+
+	// 복사 생성자 호출
+	Student* stu2 = new Student(stu1);	
 	stu2->show();
+
+	// 대입 연산자 호출
+	stu1 = stu3;	// 객체 생성 이후기 때문에 생성자가 아닌 대입연산자 호출
+	// stu1.operator=(stu3);
+	stu1.show();
 
 	return 0;
 }

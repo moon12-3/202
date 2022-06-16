@@ -24,44 +24,51 @@ public:
 	void show(void);
 };
 
+class HighSchoolStudent : public Student
+{
+private :
+	string sHakgwa;
+public:
+	HighSchoolStudent(int Hakbun, const char* Name, string Hakgwa)
+		: Student(Hakbun, Name), sHakgwa(Hakgwa)
+	{
+		cout << "HighSchoolStudent 일반생성자 호출" << endl;
+	}
+	// 소멸자
+	~HighSchoolStudent()
+	{
+		cout << "HighSchoolStudent 소멸자 호출";
+	}
+
+	
+};
 int main(void) {
-	// 일반생성자(객체가 생성될 때 호출되는 함수) 호출
-	Student stu1 = Student(1111, "JWP");
-	Student stu3 = Student(2222, "JYP");
-	stu1.show();
-
-	// 복사 생성자 호출
-	Student* stu2 = new Student(stu1);	
-	stu2->show();
-
-	// 대입 연산자 호출
-	stu1 = stu3;	// 객체 생성 이후기 때문에 생성자가 아닌 대입연산자 호출
-	// stu1.operator=(stu3);
-	stu1.show();
-
-	return 0;
+	HighSchoolStudent hss = HighSchoolStudent(1111, "JWP", "soft");
+	hss.show();	// 부모클래스의 멤버함수를 출력
 }
 
 Student::Student(int Hakbun, const char* Name)
 	: nHakbun(Hakbun)
 {
-
-	cout << "일반생성자 호출" << endl;
+	cout << "Student 생성자 호출" << endl;
 	int len = strlen(Name) + 1;	// 공간개수 측정
 	sName = new char[len];
 	strcpy(sName, Name);
 };
 
 Student::Student(const Student& rhs)
-	: nHakbun(rhs.nHakbun), sName(rhs.sName)
+	: nHakbun(rhs.nHakbun)
 {
-	cout << "복사생성자 호출" << endl;
+	cout << "Student 복사생성자 호출" << endl;
+	int len = strlen(rhs.sName) + 1;	// 공간개수 측정
+	sName = new char[len];
+	strcpy(sName, rhs.sName);
 }
 
 Student::~Student()
 {
 	delete[]sName;
-	cout << "소멸자 호출" << endl;
+	cout << "Student 소멸자 호출" << endl;
 }
 
 void Student::show(void) {
